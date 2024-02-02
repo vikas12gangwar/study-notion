@@ -26,8 +26,10 @@ export function sendOtp(email, navigate) {
       console.log("SENDOTP API RESPONSE............", response)
 
       console.log(response.data.success)
+      
 
       if (!response.data.success) {
+        toast.error(`${response?.data?.message}`)
         throw new Error(response.data.message)
       }
 
